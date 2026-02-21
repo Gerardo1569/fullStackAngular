@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Bienvenida } from './features/bienvenida/bienvenida';
+import { Bienvenida } from './components/bienvenida/bienvenida';
 
 @Component({
   selector: 'app-root',
