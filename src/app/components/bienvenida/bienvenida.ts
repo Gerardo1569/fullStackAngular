@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-bienvenida',
-  imports: [],
+  standalone: true,         
+  imports: [CommonModule],  
   templateUrl: './bienvenida.html',
-  styleUrl: './bienvenida.scss',
+  styleUrls: ['./bienvenida.scss'], 
 })
 export class Bienvenida {
-
+  fechaActual: Date = new Date();
 }
