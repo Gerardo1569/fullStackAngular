@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Usuarios } from '../../components/usuarios/usuarios';
+
+
 
 @Component({
   selector: 'app-user-detail',
-  imports: [],
+  imports: [Usuarios],
   templateUrl: './user-detail.html',
   styleUrl: './user-detail.scss',
 })

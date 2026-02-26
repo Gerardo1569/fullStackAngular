@@ -1,0 +1,38 @@
+<p>registro works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <label>
+    Nombre
+    <input formControlName="nombre">
+  </label>
+
+  <div *ngIf="form.get('nombre')?.touched && form.get('nombre')?.invalid">
+    <small *ngIf="form.get('nombre')?.errors?.['required']">
+      Requerido
+    </small>
+    <small *ngIf="form.get('nombre')?.errors?.['minlength']">
+      Mínimo 3 caracteres
+    </small>
+  </div>
+
+   <label>Email
+    <input formControlName="email" type="email">
+  </label>
+  <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+    <small *ngIf="form.get('email')?.errors?.['required']">Requerido</small>
+    <small *ngIf="form.get('email')?.errors?.['email']">Formato inválido</small>
+  </div>
+
+  <label>Contraseña
+    <input formControlName="password" type="password">
+  </label>
+  <div *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
+    <small *ngIf="form.get('password')?.errors?.['required']">Requerida</small>
+    <small *ngIf="form.get('password')?.errors?.['minlength']">Mínimo 6</small>
+  </div>
+
+  <button type="submit"  [disabled]="!form.touched || form.invalid">
+    Registrarse
+  </button>
+
+</form>
